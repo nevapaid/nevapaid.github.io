@@ -1,158 +1,298 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nevapaid Unblocked Games</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-/* ===== RESET ===== */
-* {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
-html, body {width:100%; height:100%; background:#0a001a; color:#fff; overflow-x:hidden; scroll-behavior:smooth;}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Velara</title>
+    <meta name="description" content="Discover our curated collection of 1000+ premium experiences">
+    <link rel="icon" type="image/x-icon" href="https://storage.googleapis.com/gpt-engineer-file-uploads/wEaEaGooHibPdLGG5ZonFKVJE7E3/uploads/1761942396477-6a485465c13c96ac1a5694073a6e167a.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-/* ===== VARIABLES ===== */
-:root {
-  --purple:#8a2be2;
-  --purple-dark:#4b0082;
-  --text-light:#e1e1e1;
-  --glow:#b68aff;
-  --btn-bg:#8a2be2;
-  --btn-hover:#9b4cff;
-}
+      :root {
+        --bg-primary: #222630;
+        --bg-secondary: #2B3040;
+        --bg-tertiary: #2F3447;
+        --text-primary: #ffffff;
+        --text-secondary: #b0b0b0;
+        --accent: #596A95;
+      }
 
-/* ===== HEADER ===== */
-header {
-  position:fixed; top:0; left:0; width:100%; z-index:100;
-  background:#0a001a; border-bottom:2px solid var(--purple-dark); padding:16px 0;
-}
-header nav {
-  display:flex; justify-content:space-between; align-items:center; width:90%; margin:auto;
-}
-header .logo {font-size:28px; font-weight:700; color:var(--purple); cursor:pointer; transition:0.3s;}
-header .logo:hover {color:var(--btn-hover);}
-header .nav-links a {margin-left:20px; text-decoration:none; color:var(--text-light); font-weight:500; transition:0.3s; position:relative;}
-header .nav-links a:hover {color:var(--purple);}
-header .nav-links a::after {content:""; position:absolute; width:0; height:2px; background:var(--purple); bottom:-4px; left:0; transition:0.3s;}
-header .nav-links a:hover::after {width:100%;}
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
 
-/* ===== SECTIONS ===== */
-section {width:100%; padding:80px 20px; display:flex; justify-content:center; align-items:center; flex-direction:column;}
-.section-title {font-size:2.8rem; color:var(--purple); margin-bottom:40px; text-shadow:0 0 15px var(--glow);}
-.section-subtitle {font-size:1.2rem; color:var(--text-light); max-width:900px; text-align:center; margin-bottom:40px;}
+      #particles-js {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
 
-/* ===== HERO ===== */
-.hero {height:100vh; background:radial-gradient(circle, #0a001a 0%, #0e0026 100%); text-align:center; padding:0 20px; display:flex; flex-direction:column; justify-content:center; align-items:center; position:relative; overflow:hidden;}
-.hero-title {font-size:3.5rem; font-weight:700; color:var(--purple); text-shadow:0 0 20px var(--glow); opacity:0; animation:fadeInUp 1.5s forwards;}
-.hero-sub {margin-top:16px; font-size:1.3rem; color:var(--text-light); opacity:0; animation:fadeInUp 2s forwards;}
-.hero-btn {margin-top:24px; padding:14px 32px; font-size:1.1rem; background:var(--btn-bg); border:none; border-radius:12px; color:#fff; cursor:pointer; box-shadow:0 0 15px var(--glow); transition:0.3s; opacity:0; animation:fadeInUp 2.5s forwards;}
-.hero-btn:hover {background:var(--btn-hover); box-shadow:0 0 25px var(--glow);}
+      .navbar {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--bg-secondary);
+        border-radius: 12px;
+        padding: 12px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        max-width: 600px;
+        z-index: 100;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      }
 
-/* ===== CARD GRID ===== */
-.cards-grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:28px; width:90%; margin:auto;}
-.card {background:#110025; border:2px solid #2a0040; border-radius:16px; padding:16px; text-align:center; transition:0.3s ease; cursor:pointer; box-shadow:0 0 10px rgba(138,43,226,0.3);}
-.card:hover {transform:translateY(-8px); box-shadow:0 0 25px var(--glow); border-color:var(--purple);}
-.card img {width:100%; border-radius:12px; margin-bottom:12px;}
-.card h3 {color:var(--text-light); font-size:1.1rem; margin-top:8px; transition:0.3s;}
-.card:hover h3 {color:var(--purple);}
+      .navbar-brand {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text-primary);
+      }
 
-/* ===== SEPARATE PANELS (NO SCROLL) ===== */
-.panel {min-height:100vh; display:flex; justify-content:center; align-items:center; flex-direction:column; transition:all 0.5s ease;}
-.panel:nth-child(even) {background:#0a001a;}
-.panel:nth-child(odd) {background:#0e0026;}
+      .navbar-icons {
+        display: flex;
+        gap: 20px;
+      }
 
-/* ===== FOOTER ===== */
-footer {text-align:center; padding:30px 20px; font-size:0.9rem; color:var(--text-light); background:#0a001a;}
+      .navbar-icons a {
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        transition: color 0.2s ease;
+        text-decoration: none;
+      }
 
-/* ===== ANIMATIONS ===== */
-@keyframes fadeInUp {from {opacity:0; transform:translateY(24px);} to {opacity:1; transform:translateY(0);}}
-</style>
-</head>
-<body>
+      .navbar-icons a:hover {
+        color: var(--text-primary);
+      }
 
-<header>
-  <nav>
-    <div class="logo">Nevapaid Games</div>
-    <div class="nav-links">
-      <a href="#hero">Home</a>
-      <a href="#featured">Featured Sites</a>
-      <a href="#top">Top Games</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      .container {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #title {
+        font-size: 5rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        margin-bottom: 10px;
+      }
+
+      #title span {
+        display: inline-block;
+        transition: transform 0.3s ease;
+      }
+
+      #title span:hover {
+        transform: scale(1.2) !important;
+      }
+
+      .subtitle {
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-bottom: 15px;
+      }
+
+      .random-text {
+        color: var(--accent);
+        font-size: 0.9rem;
+        cursor: pointer;
+        user-select: none;
+        margin-bottom: 20px;
+        transition: opacity 0.2s ease;
+      }
+
+      .random-text:hover {
+        opacity: 0.8;
+      }
+
+      .search-form {
+        width: 100%;
+        max-width: 500px;
+        margin-bottom: 20px;
+      }
+
+      .search-input {
+        width: 100%;
+        padding: 16px 24px;
+        background: var(--bg-secondary);
+        border: none;
+        border-radius: 12px;
+        color: var(--text-primary);
+        font-size: 1rem;
+        outline: none;
+        transition: box-shadow 0.2s ease;
+      }
+
+      .search-input::placeholder {
+        color: var(--text-secondary);
+      }
+
+      .search-input:focus {
+        box-shadow: 0 0 0 2px var(--accent);
+      }
+
+      .button-group {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .discord-btn {
+        background: #5865F2;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+      }
+
+      .discord-btn:hover {
+        transform: translateY(-2px);
+        opacity: 0.9;
+      }
+
+      .about-blank-btn {
+        background: var(--bg-tertiary);
+        color: var(--text-primary);
+        border: none;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: transform 0.2s ease, background 0.2s ease;
+      }
+
+      .about-blank-btn:hover {
+        transform: translateY(-2px);
+        background: var(--bg-secondary);
+      }
+
+      @media (max-width: 600px) {
+        #title {
+          font-size: 3rem;
+        }
+
+        .navbar {
+          width: 95%;
+          padding: 10px 16px;
+        }
+
+        .subtitle {
+          font-size: 0.95rem;
+          padding: 0 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="particles-js"></div>
+
+    <nav class="navbar">
+      <span class="navbar-brand">Velara</span>
+      <div class="navbar-icons">
+        <a href="#" title="Home"><i class="fa-solid fa-house"></i></a>
+        <a href="#" title="Games"><i class="fa-solid fa-gamepad"></i></a>
+        <a href="#" title="Settings"><i class="fa-solid fa-gear"></i></a>
+        <a href="#" title="Chat"><i class="fa-solid fa-comments"></i></a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1 id="title">
+        <span>V</span><span>E</span><span>L</span><span>A</span><span>R</span><span>A</span>
+      </h1>
+      <h4 class="subtitle">Discover our curated collection of 1000+ premium experiences</h4>
+      <div class="random-text">go play eaglercraft now!</div>
+      <form class="search-form" onsubmit="handleSearch(event)">
+        <input type="text" class="search-input" placeholder="Search Google or type an URL">
+      </form>
+      <div class="button-group">
+        <a href="https://discord.gg/nowgg" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+          <button class="discord-btn">
+            <i class="fa-brands fa-discord"></i>
+            Join Discord
+          </button>
+        </a>
+        <button class="about-blank-btn" onclick="openAboutBlank()">About:Blank</button>
+      </div>
     </div>
-  </nav>
-</header>
 
-<!-- HERO PANEL -->
-<section id="hero" class="panel hero">
-  <div class="hero-title">Unblocked Games Hub</div>
-  <div class="hero-sub">All your favorite unblocked game sites in one modern, neon purple interface.</div>
-  <button class="hero-btn" onclick="scrollToSection('featured')">See Featured Sites</button>
-</section>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+      particlesJS('particles-js', {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          color: { value: '#ffffff' },
+          shape: { type: 'circle' },
+          opacity: { value: 0.5, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1 } },
+          size: { value: 2, random: true },
+          line_linked: { enable: false },
+          move: { enable: true, speed: 0.5, direction: 'none', random: true, out_mode: 'out' }
+        },
+        interactivity: {
+          detect_on: 'canvas',
+          events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: true, mode: 'push' } },
+          modes: { grab: { distance: 140, line_linked: { opacity: 0.5 } }, push: { particles_nb: 4 } }
+        },
+        retina_detect: true
+      });
 
-<!-- FEATURED SITES PANEL -->
-<section id="featured" class="panel">
-  <div class="section-title">Featured Sites</div>
-  <div class="section-subtitle">Placeholder links to popular unblocked game websites. Replace with real URLs.</div>
-  <div class="cards-grid">
-    <div class="card" onclick="alert('Placeholder!')">
-      <img src="https://via.placeholder.com/300x180?text=Site+1" alt="Site 1">
-      <h3>Unblocked Site 1</h3>
-    </div>
-    <div class="card" onclick="alert('Placeholder!')">
-      <img src="https://via.placeholder.com/300x180?text=Site+2" alt="Site 2">
-      <h3>Unblocked Site 2</h3>
-    </div>
-    <div class="card" onclick="alert('Placeholder!')">
-      <img src="https://via.placeholder.com/300x180?text=Site+3" alt="Site 3">
-      <h3>Unblocked Site 3</h3>
-    </div>
-  </div>
-</section>
+      function handleSearch(e) {
+        e.preventDefault();
+        const input = e.target.querySelector('input').value;
+        if (input) {
+          const isUrl = input.includes('.') && !input.includes(' ');
+          const url = isUrl ? (input.startsWith('http') ? input : 'https://' + input) : 'https://www.google.com/search?q=' + encodeURIComponent(input);
+          window.open(url, '_blank');
+        }
+      }
 
-<!-- TOP GAMES PANEL -->
-<section id="top" class="panel">
-  <div class="section-title">Top Games</div>
-  <div class="section-subtitle">The most played games across all unblocked portals.</div>
-  <div class="cards-grid">
-    <div class="card" onclick="alert('Placeholder!')">
-      <img src="https://via.placeholder.com/300x180?text=Game+1" alt="Game 1">
-      <h3>Top Game 1</h3>
-    </div>
-    <div class="card" onclick="alert('Placeholder!')">
-      <img src="https://via.placeholder.com/300x180?text=Game+2" alt="Game 2">
-      <h3>Top Game 2</h3>
-    </div>
-    <div class="card" onclick="alert('Placeholder!')">
-      <img src="https://via.placeholder.com/300x180?text=Game+3" alt="Game 3">
-      <h3>Top Game 3</h3>
-    </div>
-  </div>
-</section>
+      function openAboutBlank() {
+        const win = window.open('about:blank', '_blank');
+        win.document.write('<iframe src="' + window.location.href + '" style="width:100%;height:100%;border:none;position:fixed;top:0;left:0;"></iframe>');
+      }
 
-<!-- ABOUT PANEL -->
-<section id="about" class="panel">
-  <div class="section-title">About</div>
-  <div class="section-subtitle">
-    This is a modern, responsive, neon purple-black interface for unblocked games. Each section is a separate panel with cards, hover effects, and smooth animations. Replace placeholders with real content!
-  </div>
-</section>
-
-<!-- CONTACT PANEL -->
-<section id="contact" class="panel">
-  <div class="section-title">Contact</div>
-  <div class="section-subtitle">Email: <a href="mailto:you@example.com" style="color:var(--purple);">you@example.com</a></div>
-</section>
-
-<footer>
-  <p>&copy; Nevapaid Unblocked Games</p>
-</footer>
-
-<script>
-function scrollToSection(id) {
-  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-}
-</script>
-
-</body>
+      const randomTexts = [
+        'go play eaglercraft now!',
+        'check out slope!',
+        'try 1v1.lol today!',
+        'new games added daily!',
+        'join our discord!'
+      ];
+      
+      document.querySelector('.random-text').addEventListener('click', function() {
+        this.textContent = randomTexts[Math.floor(Math.random() * randomTexts.length)];
+      });
+    </script>
+  </body>
 </html>
