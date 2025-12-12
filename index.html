@@ -1,157 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Nevapaid Arcade</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-    /* ===== Base Reset ===== */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Segoe UI', sans-serif;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScamHub</title>
+    <meta name="description" content="Find Scammer">
+    <meta name="author" content="Lovable" />
 
-    body {
-        background: #0a0f23;
-        color: #ffffff;
-        overflow-x: hidden;
-    }
+    
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
-    /* ===== Header ===== */
-    header {
-        width: 100%;
-        padding: 18px 0;
-        background: rgba(0,0,0,0.6);
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 100;
-        backdrop-filter: blur(6px);
-    }
-
-    header .container {
-        width: 90%;
-        margin: auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    header h1 {
-        font-size: 26px;
-        letter-spacing: 1px;
-    }
-
-    header nav a {
-        margin: 0 12px;
-        color: #e1eaff;
-        text-decoration: none;
-        font-weight: bold;
-        transition: 0.2s ease;
-    }
-
-    header nav a:hover {
-        color: #74c0fc;
-    }
-
-    /* ===== Games Grid ===== */
-    .games-grid {
-        width: 90%;
-        margin: 130px auto 50px;
-        display: grid;
-        gap: 20px;
-        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-    }
-
-    .game-card {
-        position: relative;
-        background: #1c2341;
-        border-radius: 12px;
-        overflow: hidden;
-        cursor: pointer;
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .game-card:hover {
-        transform: scale(1.06);
-        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
-    }
-
-    .game-card img {
-        width: 100%;
-        border-bottom: 4px solid #3b4a75;
-    }
-
-    .game-card h3 {
-        padding: 8px;
-        text-align: center;
-        font-size: 18px;
-        background: #283152;
-    }
-
-    /* ===== Footer ===== */
-    footer {
-        text-align: center;
-        padding: 18px 0;
-        color: #8fa2c0;
-        font-size: 14px;
-        margin-top: 30px;
-    }
-</style>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:title" content="ScamHub">
+  <meta name="twitter:title" content="ScamHub">
+  <meta property="og:description" content="Find Scammer">
+  <meta name="twitter:description" content="Find Scammer">
+  <link rel="icon" type="image/x-icon" href="https://storage.googleapis.com/gpt-engineer-file-uploads/wEaEaGooHibPdLGG5ZonFKVJE7E3/uploads/1761942396477-6a485465c13c96ac1a5694073a6e167a.jpg">
 </head>
-<body>
 
-<!-- ===== Header ===== -->
-<header>
-    <div class="container">
-        <h1>Nevapaid Arcade</h1>
-        <nav>
-            <a href="#games">Games</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </div>
-</header>
-
-<!-- ===== Games Section ===== -->
-<section id="games" class="games-grid">
-
-    <!-- Placeholder Game Cards -->
-    <div class="game-card" onclick="alert('replace with game link!')">
-        <img src="https://via.placeholder.com/300x180?text=Game+1" alt="Game 1">
-        <h3>Placeholder Game 1</h3>
-    </div>
-
-    <div class="game-card" onclick="alert('replace with game link!')">
-        <img src="https://via.placeholder.com/300x180?text=Game+2" alt="Game 2">
-        <h3>Placeholder Game 2</h3>
-    </div>
-
-    <div class="game-card" onclick="alert('replace with game link!')">
-        <img src="https://via.placeholder.com/300x180?text=Game+3" alt="Game 3">
-        <h3>Placeholder Game 3</h3>
-    </div>
-
-    <div class="game-card" onclick="alert('replace with game link!')">
-        <img src="https://via.placeholder.com/300x180?text=Game+4" alt="Game 4">
-        <h3>Placeholder Game 4</h3>
-    </div>
-
-    <div class="game-card" onclick="alert('replace with game link!')">
-        <img src="https://via.placeholder.com/300x180?text=Game+5" alt="Game 5">
-        <h3>Placeholder Game 5</h3>
-    </div>
-
-</section>
-
-<!-- ===== Footer ===== -->
-<footer id="about">
-    <p>Nevapaid Arcade • Site by You • Placeholder content</p>
-    <p id="contact">Contact: <a href="mailto:you@example.com" style="color:#74c0fc;">Email</a></p>
-</footer>
-
-</body>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
