@@ -506,6 +506,13 @@
                 </a>
             </div>
         </div>
+
+        <div class="buttons-container">
+            <a href="https://discord.gg/pYJNPXwwFa" target="_blank" class="btn btn-primary">
+                <i class="fab fa-discord"></i> Join Discord
+            </a>
+    </div>
+
     <!-- Settings Modal -->
     <div class="modal-overlay" id="settingsModal">
         <div class="modal">
@@ -513,7 +520,6 @@
                 <h2><i class="fas fa-cog"></i> Settings</h2>
                 <button class="modal-close" onclick="closeSettings()">&times;</button>
             </div>
-        
 
             <div class="setting-item">
                 <div class="setting-label">
@@ -692,7 +698,6 @@
             }
         }
 
-
         // Settings functions
         function openSettings() {
             document.getElementById('settingsModal').classList.add('active');
@@ -709,7 +714,6 @@
             const particles = localStorage.getItem('particles') !== 'false';
             const loading = localStorage.getItem('loading') !== 'false';
 
-            document.getElementById('cloakSelect').value = cloak;
             document.getElementById('panicToggle').checked = panic;
             document.getElementById('particleToggle').checked = particles;
             document.getElementById('loadingToggle').checked = loading;
@@ -719,19 +723,6 @@
             localStorage.setItem(key, value);
         }
 
-        function applyCloak() {
-            const cloakType = document.getElementById('cloakSelect').value;
-            localStorage.setItem('cloak', cloakType);
-            
-            const cloak = cloaks[cloakType];
-            document.title = cloak.title;
-            
-            let favicon = document.querySelector("link[rel*='icon']") || document.createElement('link');
-            favicon.type = 'image/x-icon';
-            favicon.rel = 'shortcut icon';
-            favicon.href = cloak.icon || 'data:,';
-            document.head.appendChild(favicon);
-        }
 
         function toggleParticles(enabled) {
             localStorage.setItem('particles', enabled);
@@ -750,13 +741,6 @@
             if (e.target.id === 'settingsModal') closeSettings();
         });
 
-        // Apply saved cloak on load
-        const savedCloak = localStorage.getItem('cloak');
-        if (savedCloak && savedCloak !== 'none') {
-            document.getElementById('cloakSelect').value = savedCloak;
-            applyCloak();
-        }
-
         // Apply saved particle setting
         if (localStorage.getItem('particles') === 'false') {
             document.getElementById('particles-js').style.display = 'none';
@@ -764,7 +748,6 @@
     </script>
 </body>
 </html>
-
 
 
 
