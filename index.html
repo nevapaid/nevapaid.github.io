@@ -1,298 +1,810 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Velara</title>
-    <meta name="description" content="Discover our curated collection of 1000+ premium experiences">
-    <link rel="icon" type="image/x-icon" href="https://storage.googleapis.com/gpt-engineer-file-uploads/wEaEaGooHibPdLGG5ZonFKVJE7E3/uploads/1761942396477-6a485465c13c96ac1a5694073a6e167a.jpg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="nevapissed - Your gateway to the web">
+    <title>nevapissed</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      :root {
-        --bg-primary: #222630;
-        --bg-secondary: #2B3040;
-        --bg-tertiary: #2F3447;
-        --text-primary: #ffffff;
-        --text-secondary: #b0b0b0;
-        --accent: #596A95;
-      }
-
-      body {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        background-color: var(--bg-primary);
-        color: var(--text-primary);
-        min-height: 100vh;
-        overflow-x: hidden;
-      }
-
-      #particles-js {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-      }
-
-      .navbar {
-        position: fixed;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: var(--bg-secondary);
-        border-radius: 12px;
-        padding: 12px 24px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 90%;
-        max-width: 600px;
-        z-index: 100;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      }
-
-      .navbar-brand {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: var(--text-primary);
-      }
-
-      .navbar-icons {
-        display: flex;
-        gap: 20px;
-      }
-
-      .navbar-icons a {
-        color: var(--text-secondary);
-        font-size: 1.1rem;
-        transition: color 0.2s ease;
-        text-decoration: none;
-      }
-
-      .navbar-icons a:hover {
-        color: var(--text-primary);
-      }
-
-      .container {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        padding: 20px;
-        text-align: center;
-      }
-
-      #title {
-        font-size: 5rem;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        margin-bottom: 10px;
-      }
-
-      #title span {
-        display: inline-block;
-        transition: transform 0.3s ease;
-      }
-
-      #title span:hover {
-        transform: scale(1.2) !important;
-      }
-
-      .subtitle {
-        color: var(--text-secondary);
-        font-size: 1.1rem;
-        font-weight: 500;
-        margin-bottom: 15px;
-      }
-
-      .random-text {
-        color: var(--accent);
-        font-size: 0.9rem;
-        cursor: pointer;
-        user-select: none;
-        margin-bottom: 20px;
-        transition: opacity 0.2s ease;
-      }
-
-      .random-text:hover {
-        opacity: 0.8;
-      }
-
-      .search-form {
-        width: 100%;
-        max-width: 500px;
-        margin-bottom: 20px;
-      }
-
-      .search-input {
-        width: 100%;
-        padding: 16px 24px;
-        background: var(--bg-secondary);
-        border: none;
-        border-radius: 12px;
-        color: var(--text-primary);
-        font-size: 1rem;
-        outline: none;
-        transition: box-shadow 0.2s ease;
-      }
-
-      .search-input::placeholder {
-        color: var(--text-secondary);
-      }
-
-      .search-input:focus {
-        box-shadow: 0 0 0 2px var(--accent);
-      }
-
-      .button-group {
-        display: flex;
-        gap: 10px;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .discord-btn {
-        background: #5865F2;
-        color: white;
-        border: none;
-        padding: 12px 24px;
-        border-radius: 8px;
-        font-size: 0.95rem;
-        font-weight: 500;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        transition: transform 0.2s ease, opacity 0.2s ease;
-      }
-
-      .discord-btn:hover {
-        transform: translateY(-2px);
-        opacity: 0.9;
-      }
-
-      .about-blank-btn {
-        background: var(--bg-tertiary);
-        color: var(--text-primary);
-        border: none;
-        padding: 12px 24px;
-        border-radius: 8px;
-        font-size: 0.95rem;
-        font-weight: 500;
-        cursor: pointer;
-        transition: transform 0.2s ease, background 0.2s ease;
-      }
-
-      .about-blank-btn:hover {
-        transform: translateY(-2px);
-        background: var(--bg-secondary);
-      }
-
-      @media (max-width: 600px) {
-        #title {
-          font-size: 3rem;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --text-primary: #ffffff;
+            --text-secondary: #8a8a9a;
+            --accent: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.4);
+            --card-bg: rgba(18, 18, 26, 0.8);
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 3px solid var(--border-color);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .loading-text {
+            margin-top: 30px;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            text-align: center;
+            max-width: 400px;
+            line-height: 1.6;
+            animation: fadeText 0.5s ease;
+        }
+
+        .loading-progress {
+            margin-top: 20px;
+            width: 200px;
+            height: 4px;
+            background: var(--border-color);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .loading-progress-bar {
+            height: 100%;
+            background: var(--accent);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeText {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Particles */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        /* Navbar */
         .navbar {
-          width: 95%;
-          padding: 10px 16px;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            padding: 12px 30px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            z-index: 1000;
+        }
+
+        .brand {
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent), #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-icons a, .nav-icons button {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
+        }
+
+        .nav-icons a:hover, .nav-icons button:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Main Container */
+        .main-container {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 20px 40px;
+        }
+
+        /* Hero Title */
+        .hero-title {
+            font-size: clamp(3rem, 12vw, 8rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 15px;
+            display: flex;
+            gap: 2px;
+        }
+
+        .hero-title span {
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: default;
+        }
+
+        .hero-title span:hover {
+            color: var(--accent);
+            transform: translateY(-10px) scale(1.1);
+            text-shadow: 0 0 40px var(--accent-glow);
         }
 
         .subtitle {
-          font-size: 0.95rem;
-          padding: 0 10px;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 50px;
         }
-      }
+
+        /* Games Section */
+        .games-section {
+            margin-top: 40px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .games-title {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            text-align: center;
+            color: var(--text-primary);
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .game-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 40px var(--accent-glow);
+        }
+
+        .game-card i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .game-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .game-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Buttons */
+        .buttons-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), #a855f7);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px var(--accent-glow);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--text-secondary);
+        }
+
+        /* Settings Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 30px;
+            width: 90%;
+            max-width: 450px;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .modal-header h2 {
+            font-size: 1.5rem;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--text-primary);
+        }
+
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .setting-item:last-child {
+            border-bottom: none;
+        }
+
+        .setting-label h4 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .setting-label p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Toggle Switch */
+        .toggle {
+            position: relative;
+            width: 50px;
+            height: 26px;
+        }
+
+        .toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--border-color);
+            border-radius: 26px;
+            transition: 0.3s;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 3px;
+            background: white;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .toggle input:checked + .toggle-slider {
+            background: var(--accent);
+        }
+
+        .toggle input:checked + .toggle-slider:before {
+            transform: translateX(24px);
+        }
+
+        /* Cloak Select */
+        .cloak-select {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 8px 15px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .navbar {
+                padding: 10px 20px;
+                gap: 20px;
+            }
+
+            .brand {
+                font-size: 1.1rem;
+            }
+
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-spinner"></div>
+        <div class="loading-text" id="loadingText">Initializing quantum flux capacitors...</div>
+        <div class="loading-progress">
+            <div class="loading-progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+
+    <!-- Particles Background -->
     <div id="particles-js"></div>
 
+    <!-- Navbar -->
     <nav class="navbar">
-      <span class="navbar-brand">Velara</span>
-      <div class="navbar-icons">
-        <a href="#" title="Home"><i class="fa-solid fa-house"></i></a>
-        <a href="#" title="Games"><i class="fa-solid fa-gamepad"></i></a>
-        <a href="#" title="Settings"><i class="fa-solid fa-gear"></i></a>
-        <a href="#" title="Chat"><i class="fa-solid fa-comments"></i></a>
-      </div>
+        <div class="brand">nevapissed</div>
+        <div class="nav-icons">
+            <a href="https://discord.gg/nevapissed" target="_blank" title="Discord">
+                <i class="fab fa-discord"></i>
+            </a>
+            <a href="https://github.com/nevapissed" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <button onclick="openSettings()" title="Settings">
+                <i class="fas fa-cog"></i>
+            </button>
+        </div>
     </nav>
 
-    <div class="container">
-      <h1 id="title">
-        <span>V</span><span>E</span><span>L</span><span>A</span><span>R</span><span>A</span>
-      </h1>
-      <h4 class="subtitle">Discover our curated collection of 1000+ premium experiences</h4>
-      <div class="random-text">go play eaglercraft now!</div>
-      <form class="search-form" onsubmit="handleSearch(event)">
-        <input type="text" class="search-input" placeholder="Search Google or type an URL">
-      </form>
-      <div class="button-group">
-        <a href="https://discord.gg/nowgg" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-          <button class="discord-btn">
-            <i class="fa-brands fa-discord"></i>
-            Join Discord
-          </button>
-        </a>
-        <button class="about-blank-btn" onclick="openAboutBlank()">About:Blank</button>
-      </div>
+    <!-- Main Content -->
+    <div class="main-container">
+        <h1 class="hero-title" id="heroTitle"></h1>
+        <p class="subtitle">your gateway to freedom</p>
+
+        <!-- Games Section -->
+        <div class="games-section">
+            <h2 class="games-title"><i class="fas fa-gamepad"></i> Unblocked Sites</h2>
+            <div class="games-grid">
+                <a href="#" class="game-card" onclick="openSite('https://ljioygoynr.bostoncareercounselor.com')">
+                    <i class="fas fa-globe"></i>
+                    <h3>Boston Portal</h3>
+                    <p>Access unlimited content</p>
+                </a>
+                <a href="#" class="game-card" onclick="openSite('https://voidd.network')">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Void Network</h3>
+                    <p>Browse freely</p>
+                </a>
+                <a href="#" class="game-card" onclick="openSite('https://69.164.251.210.worldplus-intl.org')">
+                    <i class="fas fa-rocket"></i>
+                    <h3>WorldPlus</h3>
+                    <p>Global access portal</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="buttons-container">
+            <a href="https://discord.gg/nevapissed" target="_blank" class="btn btn-primary">
+                <i class="fab fa-discord"></i> Join Discord
+            </a>
+            <button class="btn btn-secondary" onclick="openAboutBlank()">
+                <i class="fas fa-eye-slash"></i> About:Blank
+            </button>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal-overlay" id="settingsModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-cog"></i> Settings</h2>
+                <button class="modal-close" onclick="closeSettings()">&times;</button>
+            </div>
+            
+            <div class="setting-item">
+                <div class="setting-label">
+                    <h4>Tab Cloak</h4>
+                    <p>Disguise the tab appearance</p>
+                </div>
+                <select class="cloak-select" id="cloakSelect" onchange="applyCloak()">
+                    <option value="none">None</option>
+                    <option value="google">Google</option>
+                    <option value="classroom">Google Classroom</option>
+                    <option value="drive">Google Drive</option>
+                    <option value="docs">Google Docs</option>
+                    <option value="canvas">Canvas</option>
+                </select>
+            </div>
+
+            <div class="setting-item">
+                <div class="setting-label">
+                    <h4>Panic Key</h4>
+                    <p>Press ~ to quickly close</p>
+                </div>
+                <label class="toggle">
+                    <input type="checkbox" id="panicToggle" onchange="saveSetting('panic', this.checked)">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+
+            <div class="setting-item">
+                <div class="setting-label">
+                    <h4>Particle Effects</h4>
+                    <p>Background animation</p>
+                </div>
+                <label class="toggle">
+                    <input type="checkbox" id="particleToggle" checked onchange="toggleParticles(this.checked)">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+
+            <div class="setting-item">
+                <div class="setting-label">
+                    <h4>Loading Animations</h4>
+                    <p>Show loading screens</p>
+                </div>
+                <label class="toggle">
+                    <input type="checkbox" id="loadingToggle" checked onchange="saveSetting('loading', this.checked)">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
-      particlesJS('particles-js', {
-        particles: {
-          number: { value: 80, density: { enable: true, value_area: 800 } },
-          color: { value: '#ffffff' },
-          shape: { type: 'circle' },
-          opacity: { value: 0.5, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1 } },
-          size: { value: 2, random: true },
-          line_linked: { enable: false },
-          move: { enable: true, speed: 0.5, direction: 'none', random: true, out_mode: 'out' }
-        },
-        interactivity: {
-          detect_on: 'canvas',
-          events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: true, mode: 'push' } },
-          modes: { grab: { distance: 140, line_linked: { opacity: 0.5 } }, push: { particles_nb: 4 } }
-        },
-        retina_detect: true
-      });
+        // Random loading texts
+        const loadingTexts = [
+            "Initializing quantum flux capacitors...",
+            "Downloading more RAM...",
+            "Reticulating splines...",
+            "Generating witty loading message...",
+            "Convincing electrons to flow...",
+            "Warming up the hamster wheel...",
+            "Counting backwards from infinity...",
+            "Spinning the wheel of fortune...",
+            "Loading loading screen...",
+            "Untangling the internet cables...",
+            "Feeding the code monkeys...",
+            "Polishing pixels...",
+            "Calculating the meaning of life...",
+            "Brewing digital coffee...",
+            "Waking up the servers...",
+            "Assembling the matrix...",
+            "Optimizing hyperlinks...",
+            "Defragmenting the cloud...",
+            "Synchronizing parallel universes...",
+            "Charging the flux compensator...",
+            "Negotiating with firewall...",
+            "Teaching AI to feel emotions...",
+            "Waiting for paint to dry...",
+            "Converting caffeine to code...",
+            "Consulting the magic 8-ball...",
+            "Reversing the polarity...",
+            "Bypassing the mainframe...",
+            "Establishing secure connection...",
+            "Encrypting your hopes and dreams...",
+            "Summoning digital demons..."
+        ];
 
-      function handleSearch(e) {
-        e.preventDefault();
-        const input = e.target.querySelector('input').value;
-        if (input) {
-          const isUrl = input.includes('.') && !input.includes(' ');
-          const url = isUrl ? (input.startsWith('http') ? input : 'https://' + input) : 'https://www.google.com/search?q=' + encodeURIComponent(input);
-          window.open(url, '_blank');
+        // Tab cloak configurations
+        const cloaks = {
+            none: { title: 'nevapissed', icon: '' },
+            google: { title: 'Google', icon: 'https://www.google.com/favicon.ico' },
+            classroom: { title: 'Home', icon: 'https://ssl.gstatic.com/classroom/favicon.png' },
+            drive: { title: 'My Drive - Google Drive', icon: 'https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png' },
+            docs: { title: 'Google Docs', icon: 'https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico' },
+            canvas: { title: 'Dashboard', icon: 'https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico' }
+        };
+
+        // Initialize loading screen
+        let progress = 0;
+        let textIndex = 0;
+        const loadingTextEl = document.getElementById('loadingText');
+        const progressBar = document.getElementById('progressBar');
+        const loadingScreen = document.getElementById('loadingScreen');
+
+        function updateLoadingText() {
+            textIndex = Math.floor(Math.random() * loadingTexts.length);
+            loadingTextEl.textContent = loadingTexts[textIndex];
+            loadingTextEl.style.animation = 'none';
+            loadingTextEl.offsetHeight;
+            loadingTextEl.style.animation = 'fadeText 0.5s ease';
         }
-      }
 
-      function openAboutBlank() {
-        const win = window.open('about:blank', '_blank');
-        win.document.write('<iframe src="' + window.location.href + '" style="width:100%;height:100%;border:none;position:fixed;top:0;left:0;"></iframe>');
-      }
+        function updateProgress() {
+            if (progress < 100) {
+                progress += Math.random() * 8 + 2;
+                if (progress > 100) progress = 100;
+                progressBar.style.width = progress + '%';
+                
+                if (Math.random() > 0.6) {
+                    updateLoadingText();
+                }
+                
+                const delay = Math.random() * 400 + 200;
+                setTimeout(updateProgress, delay);
+            } else {
+                setTimeout(() => {
+                    loadingScreen.classList.add('hidden');
+                }, 500);
+            }
+        }
 
-      const randomTexts = [
-        'go play eaglercraft now!',
-        'check out slope!',
-        'try 1v1.lol today!',
-        'new games added daily!',
-        'join our discord!'
-      ];
-      
-      document.querySelector('.random-text').addEventListener('click', function() {
-        this.textContent = randomTexts[Math.floor(Math.random() * randomTexts.length)];
-      });
+        // Check if loading is enabled
+        const loadingEnabled = localStorage.getItem('loading') !== 'false';
+        if (loadingEnabled) {
+            setTimeout(updateProgress, 500);
+        } else {
+            loadingScreen.classList.add('hidden');
+        }
+
+        // Initialize particles
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#6366f1' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1 } },
+                size: { value: 3, random: true, anim: { enable: true, speed: 2, size_min: 0.1 } },
+                line_linked: { enable: true, distance: 150, color: '#6366f1', opacity: 0.2, width: 1 },
+                move: { enable: true, speed: 1, direction: 'none', random: true, straight: false, out_mode: 'out' }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: true, mode: 'push' }, resize: true },
+                modes: { grab: { distance: 140, line_linked: { opacity: 0.5 } }, push: { particles_nb: 4 } }
+            },
+            retina_detect: true
+        });
+
+        // Create hero title with letter hover effect
+        const title = 'nevapissed';
+        const heroTitle = document.getElementById('heroTitle');
+        title.split('').forEach(letter => {
+            const span = document.createElement('span');
+            span.textContent = letter;
+            heroTitle.appendChild(span);
+        });
+
+        // Open site with loading screen
+        function openSite(url) {
+            event.preventDefault();
+            const loadingEnabled = localStorage.getItem('loading') !== 'false';
+            
+            if (loadingEnabled) {
+                // Reset and show loading
+                progress = 0;
+                progressBar.style.width = '0%';
+                loadingScreen.classList.remove('hidden');
+                updateLoadingText();
+                
+                // Simulate loading then open
+                const loadTime = Math.random() * 3000 + 2000;
+                let loadProgress = 0;
+                
+                const loadInterval = setInterval(() => {
+                    loadProgress += Math.random() * 15 + 5;
+                    if (loadProgress > 100) loadProgress = 100;
+                    progressBar.style.width = loadProgress + '%';
+                    
+                    if (Math.random() > 0.5) updateLoadingText();
+                    
+                    if (loadProgress >= 100) {
+                        clearInterval(loadInterval);
+                        setTimeout(() => {
+                            window.open(url, '_blank', 'noopener,noreferrer');
+                            loadingScreen.classList.add('hidden');
+                        }, 500);
+                    }
+                }, 200);
+            } else {
+                window.open(url, '_blank', 'noopener,noreferrer');
+            }
+        }
+
+        // About:Blank cloaking
+        function openAboutBlank() {
+            const win = window.open('about:blank', '_blank');
+            const iframe = win.document.createElement('iframe');
+            iframe.style.cssText = 'width:100%;height:100%;border:none;position:fixed;top:0;left:0;';
+            iframe.src = window.location.href;
+            win.document.body.style.margin = '0';
+            win.document.body.appendChild(iframe);
+        }
+
+        // Settings functions
+        function openSettings() {
+            document.getElementById('settingsModal').classList.add('active');
+            loadSettings();
+        }
+
+        function closeSettings() {
+            document.getElementById('settingsModal').classList.remove('active');
+        }
+
+        function loadSettings() {
+            const cloak = localStorage.getItem('cloak') || 'none';
+            const panic = localStorage.getItem('panic') === 'true';
+            const particles = localStorage.getItem('particles') !== 'false';
+            const loading = localStorage.getItem('loading') !== 'false';
+
+            document.getElementById('cloakSelect').value = cloak;
+            document.getElementById('panicToggle').checked = panic;
+            document.getElementById('particleToggle').checked = particles;
+            document.getElementById('loadingToggle').checked = loading;
+        }
+
+        function saveSetting(key, value) {
+            localStorage.setItem(key, value);
+        }
+
+        function applyCloak() {
+            const cloakType = document.getElementById('cloakSelect').value;
+            localStorage.setItem('cloak', cloakType);
+            
+            const cloak = cloaks[cloakType];
+            document.title = cloak.title;
+            
+            let favicon = document.querySelector("link[rel*='icon']") || document.createElement('link');
+            favicon.type = 'image/x-icon';
+            favicon.rel = 'shortcut icon';
+            favicon.href = cloak.icon || 'data:,';
+            document.head.appendChild(favicon);
+        }
+
+        function toggleParticles(enabled) {
+            localStorage.setItem('particles', enabled);
+            document.getElementById('particles-js').style.display = enabled ? 'block' : 'none';
+        }
+
+        // Panic key functionality
+        document.addEventListener('keydown', (e) => {
+            if (e.key === '`' && localStorage.getItem('panic') === 'true') {
+                window.location.href = 'https://classroom.google.com';
+            }
+        });
+
+        // Close modal on outside click
+        document.getElementById('settingsModal').addEventListener('click', (e) => {
+            if (e.target.id === 'settingsModal') closeSettings();
+        });
+
+        // Apply saved cloak on load
+        const savedCloak = localStorage.getItem('cloak');
+        if (savedCloak && savedCloak !== 'none') {
+            document.getElementById('cloakSelect').value = savedCloak;
+            applyCloak();
+        }
+
+        // Apply saved particle setting
+        if (localStorage.getItem('particles') === 'false') {
+            document.getElementById('particles-js').style.display = 'none';
+        }
     </script>
-  </body>
+</body>
 </html>
