@@ -3,173 +3,96 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nevapaid Project</title>
+<title>Nevapaid Unblocked Games</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
+/* ===== RESET ===== */
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
+html, body {height:100%; width:100%; overflow-x:hidden; background:#0b002f; scroll-behavior:smooth; color:#fff;}
 
-/* ==== BASE RESET ==== */
-* {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
-
-html, body {
-  height:100%;
-  width:100%;
-  overflow-x:hidden;
-}
-
-/* ==== GLOBAL COLORS ==== */
+/* ===== VARIABLES ===== */
 :root {
-  --primary:#5c42ff;
-  --secondary: #0a0f23;
+  --purple:#7c4dff;
+  --purple-dark:#4b00a2;
+  --glow:#b68aff;
   --light:#ffffff;
-  --gray:#888;
+  --glass-bg:rgba(30,10,50,0.4);
 }
 
-/* ==== BODY ==== */
-body {
-  background: var(--secondary);
-  color:var(--light);
-  scroll-behavior:smooth;
-}
-
-/* ==== NAVIGATION ==== */
+/* ===== NAVBAR ===== */
 header {
-  width:100%;
-  padding:20px 0;
-  position:fixed;
-  top:0;
-  left:0;
-  z-index:999;
-  background:rgba(0,0,0,0.55);
-  backdrop-filter: blur(6px);
+  position:fixed; top:0; left:0; width:100%; z-index:100;
+  backdrop-filter:blur(12px);
+  background:var(--glass-bg);
+  padding:16px 0;
 }
-
 header nav {
-  width:90%;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  width:90%; margin:auto; display:flex; justify-content:space-between; align-items:center;
 }
-
-header nav .logo {
-  font-size:24px;
-  font-weight:700;
-  color:var(--primary);
-  cursor:pointer;
-}
-
+header nav .logo {font-size:26px; font-weight:700; color:var(--purple); text-shadow:0 0 10px var(--glow);}
 header nav .links a {
-  margin-left:18px;
-  color:var(--light);
-  text-decoration:none;
-  font-weight:600;
+  margin-left:20px; color:#fff; text-decoration:none; font-weight:600; position:relative;
   transition:0.3s ease;
 }
-
-header nav .links a:hover {
-  color:var(--primary);
+header nav .links a:hover {color:var(--purple);}
+header nav .links a::after {
+  content:""; position:absolute; width:0; height:2px; background:var(--purple); bottom:-4px; left:0;
+  transition:0.3s;
 }
+header nav .links a:hover::after {width:100%;}
 
-/* ==== HERO SECTION ==== */
+/* ===== HERO ===== */
 .hero {
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  background: linear-gradient(to bottom right, #0a0f23, #171d3d);
-  position:relative;
-  overflow:hidden;
+  height:100vh; display:flex; justify-content:center; align-items:center; text-align:center;
+  position:relative; overflow:hidden; padding:0 20px;
+  background:linear-gradient(120deg, #0b002f, #1a003d);
 }
-
-.hero h1 {
-  font-size:3rem;
-  animation:fadeIn 1.6s ease-in-out;
-}
-
-.hero p {
-  font-size:1.2rem;
-  margin-top:10px;
-  animation:fadeIn 2.2s ease-in-out;
-}
-
+.hero h1 {font-size:3rem; color:var(--purple); text-shadow:0 0 15px var(--glow); opacity:0; animation:fadeInUp 1.5s forwards;}
+.hero p {margin-top:14px; font-size:1.2rem; color:#ddd; opacity:0; animation:fadeInUp 2s forwards;}
 .hero button {
-  margin-top:18px;
-  padding:12px 26px;
-  font-size:1rem;
-  cursor:pointer;
-  background:var(--primary);
-  border:none;
-  border-radius:6px;
-  color:var(--light);
-  transition:0.3s ease;
+  margin-top:20px; padding:12px 28px; font-size:1rem; border:none; border-radius:8px;
+  background:var(--purple); color:#fff; cursor:pointer; box-shadow:0 0 10px var(--glow);
+  transition:0.3s;
+  opacity:0; animation:fadeInUp 2.5s forwards;
 }
-
-.hero button:hover {
-  background:#442edb;
-}
+.hero button:hover {background:#a070ff; box-shadow:0 0 20px var(--glow);}
 
 /* Particle canvas */
-#particles-js {
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  z-index:0;
-}
+#particles-js {position:absolute; top:0; left:0; width:100%; height:100%; z-index:0;}
 
-/* ==== SECTIONS ==== */
+/* ===== LINKS GRID ===== */
 .section {
-  padding:80px 0;
-  width:90%;
-  margin:auto;
+  padding:100px 20px 60px 20px; width:90%; margin:auto;
 }
-
-/* ==== FEATURES ==== */
-.features {
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
-  gap:28px;
-  text-align:center;
+.section h2 {text-align:center; font-size:2.5rem; margin-bottom:50px; color:var(--purple); text-shadow:0 0 15px var(--glow);}
+.games-grid {
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:28px;
 }
-
-.feature-card {
-  padding:24px;
-  background:rgba(255,255,255,0.075);
-  border-radius:12px;
-  transition:0.3s ease;
+.game-card {
+  background:var(--glass-bg); border-radius:16px; padding:16px; text-align:center; cursor:pointer;
+  transition:0.4s; backdrop-filter:blur(8px);
 }
-
-.feature-card:hover {
+.game-card:hover {
   transform:translateY(-8px);
-  background:rgba(255,255,255,0.12);
+  box-shadow:0 0 20px var(--glow);
 }
+.game-card img {width:100%; border-radius:12px; margin-bottom:12px;}
+.game-card h3 {color:var(--purple); text-shadow:0 0 10px var(--glow); font-size:1.1rem; transition:0.3s;}
+.game-card:hover h3 {color:#fff;}
 
-.feature-card h3 {
-  margin-top:14px;
-  color:var(--primary);
-}
-
-/* ==== FOOTER ==== */
+/* ===== FOOTER ===== */
 footer {
-  text-align:center;
-  padding:24px 0;
-  font-size:0.9rem;
-  color:var(--gray);
-  background:rgba(0,0,0,0.6);
-  margin-top:28px;
+  text-align:center; padding:30px 20px; color:#aaa; font-size:0.9rem; margin-top:40px;
+  backdrop-filter:blur(8px); background:var(--glass-bg);
 }
+footer a {color:var(--purple); text-decoration:none; transition:0.3s;}
+footer a:hover {color:#fff; text-shadow:0 0 10px var(--glow);}
 
-/* ==== ANIMATIONS ==== */
-@keyframes fadeIn {
-  from { opacity:0; transform:translateY(14px);}
-  to { opacity:1; transform:translateY(0);}
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  0% {opacity:0; transform:translateY(20px);}
+  100% {opacity:1; transform:translateY(0);}
 }
 </style>
 </head>
@@ -177,10 +100,10 @@ footer {
 
 <header>
   <nav>
-    <div class="logo">Nevapaid</div>
+    <div class="logo">Nevapaid Games</div>
     <div class="links">
+      <a href="#links">Links</a>
       <a href="#about">About</a>
-      <a href="#features">Features</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
@@ -189,36 +112,45 @@ footer {
 <section class="hero">
   <canvas id="particles-js"></canvas>
   <div>
-    <h1>Welcome to Nevapaid Project</h1>
-    <p>Smooth animations • Interactive design • Modern layout</p>
-    <button onclick="scrollToFeatures()">Explore More</button>
+    <h1>Unblocked Games Hub</h1>
+    <p>All your favorite games in one place. Smooth, glowing, modern UI!</p>
+    <button onclick="scrollToLinks()">See Links</button>
+  </div>
+</section>
+
+<section id="links" class="section">
+  <h2>Game Sites</h2>
+  <div class="games-grid">
+    <div class="game-card" onclick="alert('Placeholder link!')">
+      <img src="https://via.placeholder.com/300x180?text=Site+1" alt="Site 1">
+      <h3>Placeholder Site 1</h3>
+    </div>
+    <div class="game-card" onclick="alert('Placeholder link!')">
+      <img src="https://via.placeholder.com/300x180?text=Site+2" alt="Site 2">
+      <h3>Placeholder Site 2</h3>
+    </div>
+    <div class="game-card" onclick="alert('Placeholder link!')">
+      <img src="https://via.placeholder.com/300x180?text=Site+3" alt="Site 3">
+      <h3>Placeholder Site 3</h3>
+    </div>
+    <div class="game-card" onclick="alert('Placeholder link!')">
+      <img src="https://via.placeholder.com/300x180?text=Site+4" alt="Site 4">
+      <h3>Placeholder Site 4</h3>
+    </div>
+    <div class="game-card" onclick="alert('Placeholder link!')">
+      <img src="https://via.placeholder.com/300x180?text=Site+5" alt="Site 5">
+      <h3>Placeholder Site 5</h3>
+    </div>
+    <div class="game-card" onclick="alert('Placeholder link!')">
+      <img src="https://via.placeholder.com/300x180?text=Site+6" alt="Site 6">
+      <h3>Placeholder Site 6</h3>
+    </div>
   </div>
 </section>
 
 <section id="about" class="section">
-  <h2>About This Project</h2>
-  <p>This is a custom modern landing page design with animations and smooth scrolling.</p>
-</section>
-
-<section id="features" class="section">
-  <h2>Features</h2>
-  <div class="features">
-    <div class="feature-card">
-      <i class="fa-solid fa-meteor fa-2xl"></i>
-      <h3>Fast & Animated</h3>
-      <p>Interactive animations & transitions for every section.</p>
-    </div>
-    <div class="feature-card">
-      <i class="fa-solid fa-layer-group fa-2xl"></i>
-      <h3>Responsive Layout</h3>
-      <p>Looks great on phones, tablets, and desktops.</p>
-    </div>
-    <div class="feature-card">
-      <i class="fa-solid fa-scroll fa-2xl"></i>
-      <h3>Smooth Scroll</h3>
-      <p>Navigation flows naturally and smoothly.</p>
-    </div>
-  </div>
+  <h2>About</h2>
+  <p style="text-align:center; max-width:800px; margin:auto;">This is a fully modern, purple-themed unblocked games hub. Smooth animations, glowing effects, blur backgrounds, and placeholder links for all your favorite sites. Update the links with real URLs!</p>
 </section>
 
 <footer id="contact">
@@ -227,22 +159,21 @@ footer {
 
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
-function scrollToFeatures() {
-  document.getElementById("features").scrollIntoView({behavior:'smooth'});
+function scrollToLinks() {
+  document.getElementById("links").scrollIntoView({behavior:'smooth'});
 }
 
-/* ==== PARTICLE EFFECT ==== */
 particlesJS("particles-js", {
   "particles": {
-    "number": {"value":60},
+    "number": {"value":80},
+    "color": {"value":"#b68aff"},
     "shape": {"type":"circle"},
     "size": {"value":3},
-    "line_linked": {"enable":true, "distance":130, "color":"#5c42ff", "opacity":0.4}
+    "opacity": {"value":0.6},
+    "line_linked": {"enable":true, "distance":130, "color":"#b68aff", "opacity":0.5}
   },
   "interactivity": {
-    "events": {
-      "onhover": {"enable":true, "mode":"repulse"}
-    }
+    "events": {"onhover":{"enable":true,"mode":"repulse"}}
   }
 });
 </script>
