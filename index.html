@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="nevapissed - Your gateway to the web">
-    <title>Nevapissed - Home</title>
+    <title>nevapissed</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -259,7 +259,6 @@
             justify-content: center;
         }
 
-              
         .btn {
             padding: 14px 32px;
             border-radius: 50px;
@@ -312,6 +311,7 @@
             visibility: hidden;
             transition: all 0.3s ease;
         }
+
         .modal-overlay.active {
             opacity: 1;
             visibility: visible;
@@ -468,10 +468,10 @@
     <nav class="navbar">
         <div class="brand">nevapissed</div>
         <div class="nav-icons">
-            <a href="https://discord.gg/frxWR9Rf" target="_blank" title="Discord">
+            <a href="https://discord.gg/nevapissed" target="_blank" title="Discord">
                 <i class="fab fa-discord"></i>
             </a>
-            <a href="https://github.com/nevapaid" target="_blank" title="GitHub">
+            <a href="https://github.com/nevapissed" target="_blank" title="GitHub">
                 <i class="fab fa-github"></i>
             </a>
             <button onclick="openSettings()" title="Settings">
@@ -483,34 +483,38 @@
     <!-- Main Content -->
     <div class="main-container">
         <h1 class="hero-title" id="heroTitle"></h1>
-        <p class="subtitle">@nevapaid made ts bitch</p>
+        <p class="subtitle">your gateway to freedom</p>
 
         <!-- Games Section -->
         <div class="games-section">
-            <h2 class="games-title"><i class="fas fa-gamepad"></i> Unblocked Sites (UPDATED)</h2>
+            <h2 class="games-title"><i class="fas fa-gamepad"></i> Unblocked Sites</h2>
             <div class="games-grid">
                 <a href="#" class="game-card" onclick="openSite('https://ljioygoynr.bostoncareercounselor.com')">
                     <i class="fas fa-globe"></i>
-                    <h3>ROSIN</h3>
-                    <p>CLICK FOR LINK</p>
+                    <h3>Boston Portal</h3>
+                    <p>Access unlimited content</p>
                 </a>
                 <a href="#" class="game-card" onclick="openSite('https://voidd.network')">
                     <i class="fas fa-network-wired"></i>
                     <h3>Void Network</h3>
-                    <p>CLICK FOR LINK</p>
+                    <p>Browse freely</p>
                 </a>
                 <a href="#" class="game-card" onclick="openSite('https://69.164.251.210.worldplus-intl.org')">
                     <i class="fas fa-rocket"></i>
-                    <h3>frogiesarcade</h3>
-                    <p>CLICK FOR LINK</p>
+                    <h3>WorldPlus</h3>
+                    <p>Global access portal</p>
                 </a>
             </div>
         </div>
 
         <div class="buttons-container">
-            <a href="https://discord.gg/pYJNPXwwFa" target="_blank" class="btn btn-primary">
+            <a href="https://discord.gg/nevapissed" target="_blank" class="btn btn-primary">
                 <i class="fab fa-discord"></i> Join Discord
             </a>
+            <button class="btn btn-secondary" onclick="openAboutBlank()">
+                <i class="fas fa-eye-slash"></i> About:Blank
+            </button>
+        </div>
     </div>
 
     <!-- Settings Modal -->
@@ -519,6 +523,21 @@
             <div class="modal-header">
                 <h2><i class="fas fa-cog"></i> Settings</h2>
                 <button class="modal-close" onclick="closeSettings()">&times;</button>
+            </div>
+            
+            <div class="setting-item">
+                <div class="setting-label">
+                    <h4>Tab Cloak</h4>
+                    <p>Disguise the tab appearance</p>
+                </div>
+                <select class="cloak-select" id="cloakSelect" onchange="applyCloak()">
+                    <option value="none">None</option>
+                    <option value="google">Google</option>
+                    <option value="classroom">Google Classroom</option>
+                    <option value="drive">Google Drive</option>
+                    <option value="docs">Google Docs</option>
+                    <option value="canvas">Canvas</option>
+                </select>
             </div>
 
             <div class="setting-item">
@@ -560,37 +579,47 @@
     <script>
         // Random loading texts
         const loadingTexts = [
-            "Goguardian is shitty ",
-            "meow ",
-            "baby liggus",
-            "fuck da teachers boi",
-            "damp",
-            "im writing ts",
-            "im abt to querp",
-            "HolyShi JOIN TODAY",
-            "ts taking forever..",
-            "mad tired",
-            "stinky ahh boi",
-            "do ur work",
-            "ik this aint blocked its just for you to copy down on your chromebook",
+            "Initializing quantum flux capacitors...",
+            "Downloading more RAM...",
+            "Reticulating splines...",
+            "Generating witty loading message...",
+            "Convincing electrons to flow...",
+            "Warming up the hamster wheel...",
+            "Counting backwards from infinity...",
+            "Spinning the wheel of fortune...",
+            "Loading loading screen...",
+            "Untangling the internet cables...",
+            "Feeding the code monkeys...",
+            "Polishing pixels...",
+            "Calculating the meaning of life...",
             "Brewing digital coffee...",
             "Waking up the servers...",
             "Assembling the matrix...",
             "Optimizing hyperlinks...",
-            "ik this aint blocked its just for you to copy down on your chromebook",
+            "Defragmenting the cloud...",
             "Synchronizing parallel universes...",
             "Charging the flux compensator...",
             "Negotiating with firewall...",
             "Teaching AI to feel emotions...",
             "Waiting for paint to dry...",
             "Converting caffeine to code...",
-            "ik this aint blocked its just for you to copy down on your chromebook",
-            "shitty wifi",
+            "Consulting the magic 8-ball...",
+            "Reversing the polarity...",
             "Bypassing the mainframe...",
-            "i have to write like 40 of these bru",
+            "Establishing secure connection...",
             "Encrypting your hopes and dreams...",
-            "ik this aint blocked its just for you to copy down on your chromebook"
+            "Summoning digital demons..."
         ];
+
+        // Tab cloak configurations
+        const cloaks = {
+            none: { title: 'nevapissed', icon: '' },
+            google: { title: 'Google', icon: 'https://www.google.com/favicon.ico' },
+            classroom: { title: 'Home', icon: 'https://ssl.gstatic.com/classroom/favicon.png' },
+            drive: { title: 'My Drive - Google Drive', icon: 'https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png' },
+            docs: { title: 'Google Docs', icon: 'https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico' },
+            canvas: { title: 'Dashboard', icon: 'https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico' }
+        };
 
         // Initialize loading screen
         let progress = 0;
@@ -661,7 +690,7 @@
             span.textContent = letter;
             heroTitle.appendChild(span);
         });
-        
+
         // Open site with loading screen
         function openSite(url) {
             event.preventDefault();
@@ -698,6 +727,16 @@
             }
         }
 
+        // About:Blank cloaking
+        function openAboutBlank() {
+            const win = window.open('about:blank', '_blank');
+            const iframe = win.document.createElement('iframe');
+            iframe.style.cssText = 'width:100%;height:100%;border:none;position:fixed;top:0;left:0;';
+            iframe.src = window.location.href;
+            win.document.body.style.margin = '0';
+            win.document.body.appendChild(iframe);
+        }
+
         // Settings functions
         function openSettings() {
             document.getElementById('settingsModal').classList.add('active');
@@ -714,6 +753,7 @@
             const particles = localStorage.getItem('particles') !== 'false';
             const loading = localStorage.getItem('loading') !== 'false';
 
+            document.getElementById('cloakSelect').value = cloak;
             document.getElementById('panicToggle').checked = panic;
             document.getElementById('particleToggle').checked = particles;
             document.getElementById('loadingToggle').checked = loading;
@@ -723,6 +763,19 @@
             localStorage.setItem(key, value);
         }
 
+        function applyCloak() {
+            const cloakType = document.getElementById('cloakSelect').value;
+            localStorage.setItem('cloak', cloakType);
+            
+            const cloak = cloaks[cloakType];
+            document.title = cloak.title;
+            
+            let favicon = document.querySelector("link[rel*='icon']") || document.createElement('link');
+            favicon.type = 'image/x-icon';
+            favicon.rel = 'shortcut icon';
+            favicon.href = cloak.icon || 'data:,';
+            document.head.appendChild(favicon);
+        }
 
         function toggleParticles(enabled) {
             localStorage.setItem('particles', enabled);
@@ -741,6 +794,13 @@
             if (e.target.id === 'settingsModal') closeSettings();
         });
 
+        // Apply saved cloak on load
+        const savedCloak = localStorage.getItem('cloak');
+        if (savedCloak && savedCloak !== 'none') {
+            document.getElementById('cloakSelect').value = savedCloak;
+            applyCloak();
+        }
+
         // Apply saved particle setting
         if (localStorage.getItem('particles') === 'false') {
             document.getElementById('particles-js').style.display = 'none';
@@ -748,12 +808,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
