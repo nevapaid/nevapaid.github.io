@@ -1,4 +1,5 @@
 {
-  "shutdown": true,
+  "shutdown": false,
   "message": "Site is temporarily disabled."
 }
+
