@@ -1,72 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Admin Control Panel</title>
-  <style>
-    body {
-      background: #0b0b0b;
-      color: white;
-      font-family: Arial, sans-serif;
-      display: flex;
-      height: 100vh;
-      align-items: center;
-      justify-content: center;
-    }
-    .panel {
-      background: #111;
-      padding: 30px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 0 40px rgba(0,0,0,.6);
-    }
-    button {
-      display: block;
-      width: 260px;
-      padding: 14px;
-      margin: 12px 0;
-      font-size: 16px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .on { background: #c0392b; color: white; }
-    .off { background: #27ae60; color: white; }
-    .note { opacity: .6; font-size: 12px; margin-top: 10px; }
-  </style>
-</head>
-<body>
-
-<div class="panel">
-  <h2>🔒 Global Shutdown Control</h2>
-
-  <button class="on" onclick="shutdownOn()">
-    TURN SHUTDOWN ON
-  </button>
-
-  <button class="off" onclick="shutdownOff()">
-    TURN SHUTDOWN OFF
-  </button>
-
-  <div class="note">
-    You must click “Commit changes” on GitHub
-  </div>
-</div>
+<button onclick="toggleShutdown(true)">Shutdown ON</button>
+<button onclick="toggleShutdown(false)">Shutdown OFF</button>
 
 <script>
-function shutdownOn() {
-  window.open(
-    "https://github.com/nevapaid/nevapaid-status/edit/main/status.json",
-    "_blank"
-  );
-}
+async function toggleShutdown(state) {
+  // This requires a GitHub Personal Access Token to push changes
+  const token = 'YOUR_GITHUB_TOKEN'; // <- Keep this secret!
+  const repo = 'nevapaid/nevapaid.github.io';
+  const path = 'shutdown.json';
 
-function shutdownOff() {
-  window.open(
-    "https://github.com/nevapaid/nevapaid-status/edit/main/status.json",
-    "_blank"
-  );
+  // Get current file info
+  const res = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`);
+  const file = await res.json();
+
+  const sha = file.sha;
+  const content = btoa(JSON.stringify({ shutdown: state }));
+
+  await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
+    method: 'PUT',
+    headers: {
+      'Authorization': `token ${token}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      message: `Set shutdown to ${state}`,
+      content: content,
+      sha: sha
+    })
+  });
+
+  alert('Shutdown state changed!');
 }
 </script>
-
-</body>
-</html>
